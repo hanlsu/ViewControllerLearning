@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = [UIColor orangeColor];
     self.secondVC = [[SecondViewController alloc] init];
 }
 - (IBAction)btnClick:(id)sender {
