@@ -96,10 +96,21 @@ When using Auto Layout, set up constraints between the container and child after
            [newVC didMoveToParentViewController:self];
         }];
 }
-~~
+~~~
 
 **管理子视图控制器的外观更新**
 
+在添加了一个child到container后，container自动转发外观相关的消息给child.这确保了所有的事件能被正确的发送。然而，有时候这种默认的行为可能以一种对你的container来说并不合理的顺序发送那些事件。
+
+要接管appearance callbacks，需要在container view controler中重写方法`shouldAutomaticallyForwardAppearanceMethods`方法，返回`NO`。
+
+Disabling automatic appearance forwarding
+
+~~~objc
+- (BOOL) shouldAutomaticallyForwardAppearanceMethods {
+        return NO;
+}
+~~~
 
 
 
